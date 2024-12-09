@@ -1,0 +1,64 @@
+:root {
+    --main-color: #FFFFFF;
+    --second-color: #FF0000;
+    --accent-color: #000000;
+    --accent-color2: #FDD23C;
+
+    --font-header: Lilita One, sans-serif;
+    --font-body: Space Grotesk, sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+}
+
+header {
+    font-family: var(--font-header);
+}
+
+.navbar {
+    background-color: var(--second-color);
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: var(--main-color);
+    flex: 1;
+    padding: 1em;
+    font-size: 20px;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: var(--accent-color);
+    color: var(--accent-color2);
+}
+
+.home-main {
+    margin: 0 3em;
+    text-align: center;
+}
+
+.home-main h1 {
+    margin-bottom: 2em;
+}
+
+.home-main ul {
+    text-align: left;
+    margin-left: 15em;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--accent-color);
+    color: var(--accent-color2);
+    padding: 1.5em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
