@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokemon Stat Comparison | Compare</title>
+        <link rel="stylesheet" href="/css/style.css"/>
+        <script src="../js/main.js" type="module" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header id="header"></header>
+    <main id="main-compare">
+        <h1>Comparison Tool</h1>
+        <h3>Which stats would you like to compare?</h3>
+        <form class="stats">
+            <input type="checkbox" id="type" name="type" value="type">
+            <label for="type">Type(s)</label><br>
+            <input type="checkbox" id="hp" name="hp" value="hp">
+            <label for="hp">HP</label><br>
+            <input type="checkbox" id="attack" name="attack" value="attack">
+            <label for="attack">Attack</label><br>
+            <input type="checkbox" id="defense" name="defense" value="defense">
+            <label for="defense">Defense</label><br>
+            <input type="checkbox" id="special-attack" name="special-attack" value="special-attack">
+            <label for="special-attack">Special Attack</label><br>
+            <input type="checkbox" id="special-defense" name="special-defense" value="special-defense">
+            <label for="special-defense">Special Defense</label><br>
+            <input type="checkbox" id="speed" name="speed" value="speed">
+            <label for="speed">Speed</label><br>        
+        </form>
+        <h3>Select two Pokemon to compare:</h3>
+        <form class="pokemon-select">
+            <div class="pokemon1">
+                <label for="pokemon1">Pokemon 1</label>
+                <select name="pokemon1" id="pokemon1" required></select>
+            </div>
+            <div class="pokemon2">
+                <label for="pokemon2">Pokemon 2</label>
+                <select name="pokemon2" id="pokemon2" required></select>
+            </div>
+        </form>
+
+        <div id="pokemon-data"></div>
+
+        <button id="save-view">Save Current View</button>
+
+    </main>
+    <footer id="footer"></footer>
+</body>
+</html>
