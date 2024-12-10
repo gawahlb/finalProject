@@ -71,12 +71,12 @@ footer {
     text-align: center;
 }
 
-.stats {
+#stats {
     display: flex;
     margin-bottom: 3em;
 }
 
-.stats label {
+#stats label {
     margin-right: 3em;
 }
 
