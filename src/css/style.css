@@ -11,6 +11,8 @@
 body {
     font-family: var(--font-body);
     margin: 0;
+    background-image: url("/images/pokeball.jpg");
+    background-size: 10%;
 }
 
 header {
@@ -58,6 +60,7 @@ footer {
     background-color: var(--accent-color);
     color: var(--accent-color2);
     padding: 1.5em 0;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -98,25 +101,38 @@ footer {
 }
 
 .tables {
-    
+    margin-bottom: 10em;
+    display: grid;    
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
 }
 
-
-#pokemon1-data table {
-    border: 1px solid black;
-    border-collapse: collapse;
+#pokemon1-sprite,
+#pokemon1-data {
+    grid-column: 1/2;
+    height: 100%;
 }
 
-#pokemon1-data th, td {
-    border: 1px solid black;
+#pokemon2-sprite,
+#pokemon2-data {
+    grid-column: 2/3;
+    height: 100%;
 }
 
+#pokemon2-sprite {
+    grid-row: 1;
+}
+
+#pokemon1-data table,
 #pokemon2-data table {
     border: 1px solid black;
     border-collapse: collapse;
+    background-color: var(--main-color);
 }
 
+#pokemon1-data th, td,
 #pokemon2-data th, td {
     border: 1px solid black;
 }
+
  

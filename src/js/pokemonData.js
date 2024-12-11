@@ -143,6 +143,6 @@ export function nameListener() {
 export async function updateSprite(data) {
     const sprite = data.sprites.front_default;
     
-    const spriteTemplate = `<img src=${sprite}>`
+    const spriteTemplate = `<img class="pokemon-image" src=${sprite}>`
     return spriteTemplate;
 }
