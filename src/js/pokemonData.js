@@ -30,12 +30,21 @@ export async function getData(name) {
 export async function displayDetails() {
     const name1 = selectName('pokemon1');
     const name2 = selectName('pokemon2');
+
     const pokemon1Details = await getData(name1);
     const pokemon2Details = await getData(name2);
+
     const table1 = document.getElementById('pokemon1-data');
     const table2 = document.getElementById('pokemon2-data');
+
     const newTable1 = detailsTemplate(pokemon1Details);
     const newTable2 = detailsTemplate(pokemon2Details);
+
+    const sp1 = document.getElementById('pokemon1-sprite');
+    const sp2 = document.getElementById('pokemon2-sprite');
+
+    sp1.innerHTML = await updateSprite(pokemon1Details);
+    sp2.innerHTML = await updateSprite(pokemon2Details);
     
     table1.innerHTML = newTable1;
     table2.innerHTML = newTable2;
@@ -95,10 +104,12 @@ export async function initDd() {
 }
 
 export function populateNames(data, ids) {
-    console.log(data);
+    
+    const sortData = data.sort((a, b) => a.name.localeCompare(b.name));
+
     ids.forEach(id => {
         const menu = document.getElementById(id);
-        menu.innerHTML = data.map(pokemon => `<option value="${pokemon.name}">${pokemon.name}</option>`).join('');
+        menu.innerHTML = sortData.map(pokemon => `<option value="${pokemon.name}">${pokemon.name}</option>`).join('');
         
     });
 }
@@ -127,4 +138,11 @@ export function nameListener() {
     dd2.addEventListener('change', () => {
         displayDetails();
     })
+}
+
+export async function updateSprite(data) {
+    const sprite = data.sprites.front_default;
+    
+    const spriteTemplate = `<img src=${sprite}>`
+    return spriteTemplate;
 }

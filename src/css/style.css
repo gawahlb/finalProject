@@ -58,7 +58,6 @@ footer {
     background-color: var(--accent-color);
     color: var(--accent-color2);
     padding: 1.5em 0;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -97,3 +96,27 @@ footer {
 #saved-main {
     text-align: center;
 }
+
+.tables {
+    
+}
+
+
+#pokemon1-data table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#pokemon1-data th, td {
+    border: 1px solid black;
+}
+
+#pokemon2-data table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#pokemon2-data th, td {
+    border: 1px solid black;
+}
+ 

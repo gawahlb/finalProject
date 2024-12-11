@@ -16,8 +16,6 @@
         <h1>Compare Pokemon</h1>
         <h3>Which stats would you like to compare?</h3>
         <form id="stats">
-            <input type="checkbox" id="type" name="type" value="type">
-            <label for="type">Type(s)</label><br>
             <input type="checkbox" id="hp" name="hp" value="hp">
             <label for="hp">HP</label><br>
             <input type="checkbox" id="attack" name="attack" value="attack">
@@ -43,11 +41,12 @@
             </div>
         </form>
 
-        <section id="pokemon1-data"></section>
-
-        <section id="pokemon2-data"></section>
-
-        <button id="save-view">Save Current View</button>
+        <div class="tables">
+            <div id="pokemon1-sprite"></div>
+            <section id="pokemon1-data"></section>
+            <div id="pokemon2-sprite"></div>
+            <section id="pokemon2-data"></section>
+        </div>
 
     </main>
     <footer id="footer"></footer>

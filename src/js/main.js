@@ -1,5 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
-import { displayDetails, initDd, statSelection, statListener } from "./pokemonData";
+import { displayDetails, initDd, statSelection, statListener, updateSprite } from "./pokemonData";
 
 
 
@@ -8,3 +8,4 @@ displayDetails();
 initDd();
 statSelection();
 statListener();
+updateSprite();
