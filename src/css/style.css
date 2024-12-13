@@ -50,7 +50,11 @@ header {
     border: 5px solid var(--accent-color);
     border-radius: 20px;
     background-color: var(--main-color);
-    box-shadow: 5px 5px 10px rgb(155, 155, 155);
+    transition: box-shadow .2s ease-in-out;
+}
+
+#home-body:hover {
+    box-shadow: 10px 10px 30px rgb(155, 155, 155);
 }
 
 .home-main h1 {
@@ -122,6 +126,16 @@ footer {
     display: grid;    
     place-items: center;
     grid-template-columns: 1fr 1fr;
+}
+
+.pokemon-image {
+    transition: background-color .2s ease-in-out;
+}
+
+.pokemon-image:hover {
+    background-color: var(--main-color);
+    border: 2px solid var(--second-color);
+    border-radius: 10px;
 }
 
 #pokemon1-sprite,
