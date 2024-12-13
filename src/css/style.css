@@ -144,7 +144,11 @@ footer {
     border: 1px solid black;
 }
 
- @media only screen and (max-width: 2000px) {
+
+
+
+
+ @media only screen and (max-width: 750px) {
     .home-main {
         margin: 0;
         text-align: center;
