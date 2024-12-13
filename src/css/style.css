@@ -88,43 +88,52 @@ footer {
     text-align: center;
 }
 
-#save-view {
+#saveView {
     cursor: pointer;
     margin-top: 2em;
     margin-left: 3em;
     margin-left: 44%;
     padding: .5em;
+    margin-bottom: 10em;
 }
 
 #saved-main {
     text-align: center;
 }
 
-.tables {
-    margin-bottom: 10em;
+.tables,
+#view-list {
+    margin-bottom: 5em;
     display: grid;    
     place-items: center;
     grid-template-columns: 1fr 1fr;
 }
 
 #pokemon1-sprite,
-#pokemon1-data {
+#pokemon1-data,
+#pokemon1-name,
+#pokemon1-list {
     grid-column: 1/2;
     height: 100%;
 }
 
 #pokemon2-sprite,
-#pokemon2-data {
+#pokemon2-data,
+#pokemon2-name,
+#pokemon2-list {
     grid-column: 2/3;
     height: 100%;
 }
 
-#pokemon2-sprite {
+#pokemon2-sprite,
+#pokemon2-name {
     grid-row: 1;
 }
 
-#pokemon1-data table,
-#pokemon2-data table {
+#pokemon1-data,
+#pokemon2-data,
+#pokemon1-list,
+#pokemon2-list {
     border: 1px solid black;
     border-collapse: collapse;
     background-color: var(--main-color);
@@ -135,4 +144,48 @@ footer {
     border: 1px solid black;
 }
 
- 
+ @media only screen and (max-width: 2000px) {
+    .home-main {
+        margin: 0;
+        text-align: center;
+    }
+
+    .home-main ul {
+        text-align: left;
+        margin-left: 0em;
+    }
+
+    #stats {
+        display: contents;
+        margin-bottom: 3em;
+    }
+
+    #stats input {
+        transform: scale(2);
+        margin-bottom: 2em;
+    }
+
+    #stats label {
+        font-size: 25px;
+        margin-left: .5em;
+    }
+
+    #saveView {
+        cursor: pointer;
+        margin-left: 7em;
+        padding: .5em;
+        margin-bottom: 7em;
+    }
+
+    #pokemon1,
+    #pokemon2 {
+        max-width: 100px;
+    }
+
+    .tables {
+    margin-bottom: 3em;
+    display: grid;    
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    }
+ }

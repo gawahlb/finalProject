@@ -8,6 +8,12 @@ export function displaySaved() {
     const currentName1 = getLocalStorage('name1');
     const currentName2 = getLocalStorage('name2');
 
+    const name1 = document.getElementById('pokemon1-name');
+    const name2 = document.getElementById('pokemon2-name');  
+
+    name1.textContent = "";
+    name2.textContent = "";
+
     if(currentStorage1.length > 0 && currentStorage2.length > 0) {
         const table1 = document.getElementById('pokemon1-list');
         const table2 = document.getElementById('pokemon2-list');
@@ -34,17 +40,21 @@ export function displaySaved() {
             });
             table2.appendChild(tr);
         });
-            
+        
+            name1.textContent = currentName1;
+            name2.textContent = currentName2;
+
         } else {
-            alert("No saved views!");
+            const message = document.getElementById('view-list');
+
+            message.textContent = "No currently saved view!";
         }
 
-        const name1 = document.getElementById('pokemon1-name');
-        const name2 = document.getElementById('pokemon2-name');
-
-        name1.textContent = currentName1;
-        name2.textContent = currentName2;
+        
+        
     }
+
+    
 
 window.addEventListener("DOMContentLoaded", () => {
     displaySaved();
