@@ -1,3 +1,5 @@
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+
 const url = 'https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0'
 
 export async function getData(name) {
@@ -56,13 +58,11 @@ function detailsTemplate(data) {
     }
 
     const newTable = `
-    <table>
         <tr>
             <th>Stat</th>
             <th>Value</th>
         </tr>
-        ${statSelection(data.stats) || "<tr><td colspan='2'>No stats selected</td></tr>"}
-    </table>`;
+        ${statSelection(data.stats) || "<tr><td colspan='2'>No stats selected</td></tr>"}`;
 
     return newTable;
 }
@@ -97,6 +97,7 @@ export async function initDd() {
             populateNames(data.results, ['pokemon1', 'pokemon2']);
             statListener();
             nameListener();
+            captureView();
             
     } catch {
         console.error(error);
@@ -145,4 +146,56 @@ export async function updateSprite(data) {
     
     const spriteTemplate = `<img class="pokemon-image" src=${sprite}>`
     return spriteTemplate;
+}
+
+export function captureView() {
+    const saveButton = document.getElementById('saveView');
+
+    saveButton.addEventListener('click', () => {
+
+            const currentName1 = getLocalStorage('name1');
+            const currentName2 = getLocalStorage('name2');
+            const currentStorage1 = getLocalStorage('saved1');
+            const currentStorage2 = getLocalStorage('saved2');
+
+            console.log(currentStorage1);
+
+            if(currentStorage1.length > 0) {
+                setLocalStorage('saved1', []);
+            }
+            if(currentStorage2.length > 0) {
+                setLocalStorage('saved2', []);
+            }
+            if(currentName1.length > 0) {
+                setLocalStorage('name1', "");
+            }
+            if(currentName2.length > 0) {
+                setLocalStorage('name2', "");
+            }
+
+            const table1 = document.getElementById('pokemon1-data');
+            const table2 = document.getElementById('pokemon2-data');
+            const name1 = document.getElementById('pokemon1');
+            const name2 = document.getElementById('pokemon2');
+
+            const data1 = Array.from(table1.rows).map(row => 
+                Array.from(row.cells).map(cell => cell.innerText)
+            );
+
+            const data2 = Array.from(table2.rows).map(row => 
+                Array.from(row.cells).map(cell => cell.innerText)
+            );
+            
+            const displayName1 = name1.value;
+
+            const displayName2 = name2.value;
+
+            setLocalStorage('saved1', data1);
+            setLocalStorage('saved2', data2);
+            setLocalStorage('name1', displayName1);
+            setLocalStorage('name2', displayName2);
+
+            alert('View saved successfully!');
+    });
+    
 }
